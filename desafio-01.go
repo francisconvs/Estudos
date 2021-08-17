@@ -11,15 +11,17 @@ package main
 import "fmt"
 
 func main() {
-	soma(5, 5, "+")
-	soma(5, 6, "-")
-	soma(5, 5, "/")
-	soma(5, 5, "*")
-	soma(5, 5, "+++")
+	calculadora(5, 5, "+")
+	calculadora(5, 6, "-")
+	calculadora(5, 5, "/")
+	calculadora(5, 5, "*")
+	calculadora(5, 5, "+++")
+	calculadora(-5, -10, "+")
+	calculadora(-5, -5, "-")
 
 }
 
-func soma(num1 int, num2 int, operador string) {
+func calculadora(num1 int, num2 int, operador string) {
 
 	if operador == "+" {
 		validaValor(num1 + num2)
