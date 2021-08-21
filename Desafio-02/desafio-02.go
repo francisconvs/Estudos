@@ -14,6 +14,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -32,14 +33,16 @@ func pessoa(nome string) string {
 
 	meliante := individuo{nome, "vazio"}
 
-	if nome == "Pedro" {
+	if strings.ToLower(nome) == "pedro" {
 		meliante.Atributo = "Bonito"
-	} else if nome == "Jonas" {
+	} else if strings.ToLower(nome) == "jonas" {
 		meliante.Atributo = "Zica de mais"
-	} else if nome == "Well" {
+	} else if strings.ToLower(nome) == "well" {
 		meliante.Atributo = "Lindão"
-	} else if nome == "Chico" {
+	} else if strings.ToLower(nome) == "chico" {
 		meliante.Atributo = "Bebe água"
+	} else {
+		meliante.Atributo = ""
 	}
 
 	return meliante.Atributo
