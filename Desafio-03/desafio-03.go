@@ -7,5 +7,26 @@
 
 // Exemplos:
 
-// 1. Dado o array A = [1,0,1,0,1,1], a função deve retornar 1. Depois de inverter a sexta moeda, alcançamos uma sequência alternada de moedas [1,0,1,0,1, 0].
+// 1. Dado o array A = [1,0,1,0,1,1], a função deve retornar 1. Depois de inverter a sexta moeda, alcançamos uma sequência alternada de moedas [1,0,1,0,1,0].
+package main
 
+import (
+	"fmt"
+)
+
+func main() {
+	A := [10]int{1, 0, 1, 0, 1, 1}
+	solution(A)
+
+}
+
+func solution(A [10]int) {
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(A[i])
+		anterior = A[(i-1)]
+		if A[i] == anterior {
+			
+		}
+	}
+}
