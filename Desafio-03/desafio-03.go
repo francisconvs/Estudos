@@ -15,18 +15,25 @@ import (
 )
 
 func main() {
-	A := [10]int{1, 0, 1, 0, 1, 1}
+	A := []int{0, 0, 0, 0, 0, 0}
 	solution(A)
-
 }
 
-func solution(A [10]int) {
-
-	for i := 0; i < 10; i++ {
-		fmt.Println(A[i])
-		anterior = A[(i-1)]
-		if A[i] == anterior {
-			
+func solution(A []int) {
+	trocas := 0
+	for indice, valor := range A {
+		if indice > 0 {
+			if valor == A[indice-1] {
+				if A[indice-1] == 1 {
+					A[indice] = 0
+					trocas++
+				} else if A[indice-1] == 0 {
+					A[indice] = 1
+					trocas++
+				}
+			}
 		}
 	}
+	fmt.Println(A)
+	fmt.Println(trocas)
 }
