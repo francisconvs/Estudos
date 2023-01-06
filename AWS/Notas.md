@@ -24,9 +24,9 @@
 - Comunidade (Empresas se reunem para montar um cloud compartilhado entre elas). 
  
 # Well Architected
- ## Pilares:
- - Excelencia operacional 
- - Segurança 
- - Confiabilidade
- - Eficiencia na sua performance
- - Otimização de custo
+## Pilares:
+- Excelencia operacional 
+- Segurança 
+- Confiabilidade
+- Eficiencia na sua performance
+- Otimização de custo
