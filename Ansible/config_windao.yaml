@@ -1,0 +1,59 @@
+- hosts: Win_2019
+  tasks:
+
+  - name: Search and download Windows updates without installing them
+    win_updates:
+      state: downloaded
+
+  - name: Install all security, critical, and rollup updates without a scheduled task
+    win_updates:
+      category_names:
+        - SecurityUpdates
+        - CriticalUpdates
+        # - UpdateRollups
+      # reboot: true
+    become: true
+    become_method: runas
+    become_user: SYSTEM
+
+  - name: Configurando proxy
+    win_http_proxy:
+      proxy: proxy-dev.intranet.pags:3128
+      bypass:
+        - \*.intranet.pags
+
+  - name: Instalando IIS
+    win_feature:
+      name:
+        - Web-Server
+        - Web-Common-Http
+        - Web-Net-Ext45
+        - Web-Asp-Net45
+        - Web-Default-Doc
+        - Web-Dir-Browsing
+        - Web-Http-Errors
+        - Web-Static-Content
+        - Web-Http-Redirect
+        - Web-Http-Logging
+        - Web-Custom-Logging
+        - Web-Log-Libraries
+        - Web-Request-Monitor
+        - Web-Http-Tracing
+        - Web-Stat-Compression
+        - Web-Filtering
+        - Web-Basic-Auth
+        - Web-Digest-Auth
+        - Web-IP-Security
+        - Web-Url-Auth
+        - Web-Windows-Auth
+        - Web-WebSockets
+        - Web-Mgmt-Console
+        - Web-Scripting-Tools
+        - Web-Mgmt-Service
+      state: present
+      include_management_tools: true
+
+  - name: Criando estrutura de pastas
+    win_file:
+      path: C:\Sistemas\Funcao
+      state: directory
